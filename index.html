@@ -17,16 +17,25 @@
 <body>
 
     <div id="root">
+        <div class="container">
+            <div class="row flex-column align-items-center">
+                <header class="img-container col-8 col-lg-4">
+                    <img src="img/logo.png" alt="logo-boolean">
+                </header>
 
-        <input id="inputFocused" type="text" v-model="newTask" @keyup.enter="addTask"
-            placeholder="Inserisci il nuovo task">
-        <button @click="addTask">Aggiungi</button>
+                <nav class="input-area col-12 text-center">
+                    <input id="inputFocused" type="text" v-model="newTask" @keyup.enter="addTask"
+                        placeholder="Nuovo ToDo">
+                    <button @click="addTask">Aggiungi</button>
+                </nav>
 
-        <ul>
-            <li v-for="(item,index) in toDoList">
-                {{item}} <i class="fas fa-backspace" @click="deleteTask(index)"></i>
-            </li>
-        </ul>
+                <ul class="col-12 col-lg-8">
+                    <li v-for="(item,index) in toDoList" class="d-flex justify-content-between align-items-center">
+                        <div>{{item}}</div> <i class="fas fa-backspace" @click="deleteTask(index)"></i>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
 
 
